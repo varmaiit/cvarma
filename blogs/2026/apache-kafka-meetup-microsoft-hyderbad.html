@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cvarma.com/theme/css/bootstrap4b2.min.css">
+    <link rel="stylesheet" href="https://cvarma.com/theme/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cvarma.com/theme/css/styleblog.css">
+    <meta name="author" content="Chaitanya Varma" />
+    <meta name="keywords" content="Kafka,Distributed Systems,AI" />
+    <meta name="description" content="Apache Kafka Meetup @ Microsoft – Insights on Distributed Systems, Streaming &amp; Gen AI Agents" />
+
+    <title>"Apache Kafka Meetup @ Microsoft – Deep Dive into Distributed Systems, Streaming & Gen AI Agents" - Chaitanya Varma's Blog</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-sm fixed-top">
+      <div class="container">
+        <a class="navbar-brand navbar-brand-custom" href="/"><h5>Chaitanya Varma's Blog</h5></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars" aria-hidden="true"></i>      
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link " 
+                href="/blogs/">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " 
+                href="/blogs/tags.html">Tags</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link " 
+                 href="/aboutme.html">About</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+   <div class="py-5">
+
+  
+<div class="container mt-4">
+
+  <div class="row">
+
+    <!-- Article content  -->
+    <div class="col-lg-8">   
+
+          <h2 class="mt-4 mb-3">"Apache Kafka Meetup @ Microsoft – Deep Dive into Distributed Systems, Streaming & Gen AI Agents"</h2>
+          
+          <div class="text-muted mb-2">
+            <time datetime="2026-02-21 16:25:00+05:30">
+              21 Feb 2026
+            </time>
+            
+            <span class="tags">Tags : </span>
+              <a href="https://cvarma.com/blogs/tag/kafka.html">Kafka</a>
+/              <a href="https://cvarma.com/blogs/tag/distributed-systems.html">Distributed Systems</a>
+/              <a href="https://cvarma.com/blogs/tag/ai.html">AI</a>
+          </div>
+          
+
+          <br>
+          <br>
+          
+          <h1>🚀 Apache Kafka Meetup @ Microsoft – Insights on Distributed Systems, Streaming &amp; Gen AI Agents</h1>
+<p>Recently, I had the opportunity to attend the <strong>Apache Kafka Meetup</strong> hosted at Microsoft, organized by the GitHub User Group in collaboration with Confluent.</p>
+<p>The sessions were incredibly insightful, covering distributed systems, real-time streaming architectures, microservices communication, and the evolving landscape of Gen AI agents.</p>
+<p>Here’s a detailed recap of the key takeaways from the event.</p>
+<hr>
+<h2>🔁 Revisiting Distributed Systems Fundamentals</h2>
+<p>One of the most engaging talks was delivered by <strong>Sai Teja K</strong>, who walked us through practical distributed systems concepts in modern data architectures.</p>
+<p>His talk beautifully refreshed core system design principles.</p>
+<h3>🔥 Hot Path vs ❄️ Cold Path</h3>
+<p>In real-time systems:</p>
+<ul>
+<li><strong>Hot Path</strong> → Processes real-time data for immediate insights and actions.</li>
+<li><strong>Cold Path</strong> → Handles historical data processing, batch analytics, and long-term storage.</li>
+</ul>
+<p>This distinction is crucial when designing scalable event-driven architectures.</p>
+<hr>
+<h2>🧊 Modern Data Storage &amp; Processing Concepts</h2>
+<p>The discussion went deeper into modern analytical storage patterns.</p>
+<h3>🗄️ ClickHouse for Analytical Workloads</h3>
+<p>ClickHouse is a powerful column-oriented database optimized for OLAP workloads. It excels in:</p>
+<ul>
+<li>High-speed aggregations  </li>
+<li>Real-time analytics  </li>
+<li>Large-scale event data processing  </li>
+</ul>
+<hr>
+<h3>🧱 Iceberg Table Format &amp; Cloud Storage</h3>
+<p>Apache Iceberg is a modern table format designed for:</p>
+<ul>
+<li>Huge analytic datasets  </li>
+<li>ACID transactions on data lakes  </li>
+<li>Schema evolution  </li>
+<li>Time travel queries  </li>
+</ul>
+<p>When combined with cloud storage, it enables scalable and reliable data lake architectures.</p>
+<hr>
+<h2>⚠️ Split Brain Problem in Distributed Systems</h2>
+<p>A very important distributed systems concept revisited was the <strong>Split Brain Problem</strong>.</p>
+<p>It occurs when:</p>
+<ul>
+<li>A cluster gets partitioned due to network failures.</li>
+<li>Multiple nodes assume leadership.</li>
+<li>This leads to inconsistent writes and system instability.</li>
+</ul>
+<p>Handling this requires:</p>
+<ul>
+<li>Proper quorum mechanisms  </li>
+<li>Consensus protocols (like Raft/Paxos)  </li>
+<li>Strong coordination strategies  </li>
+</ul>
+<hr>
+<h2>🧹 Watermarking Techniques for Deduplication</h2>
+<p>In event-driven streaming systems, duplicate events are common.</p>
+<p>Watermarking techniques help by:</p>
+<ul>
+<li>Tracking event-time progress  </li>
+<li>Ensuring correct window processing  </li>
+<li>Reducing duplication in streaming pipelines  </li>
+</ul>
+<p>This becomes critical in high-throughput systems where idempotency and correctness matter.</p>
+<hr>
+<h2>⚡ Microservices Communication – Beyond Kafka</h2>
+<p>While Kafka dominates event streaming, the talk also highlighted alternative communication patterns.</p>
+<h3>📡 NATS for Microservices</h3>
+<p>NATS is a lightweight messaging system often used for:</p>
+<ul>
+<li>Microservice-to-microservice communication  </li>
+<li>Low-latency pub-sub messaging  </li>
+<li>Simpler deployment compared to heavy streaming systems  </li>
+</ul>
+<hr>
+<h3>🌊 GlassFlow – Alternative to Kafka Streams &amp; Flink</h3>
+<p>GlassFlow was introduced as an alternative to Kafka Streams and Apache Flink.</p>
+<p>It aims to simplify real-time stream processing with:</p>
+<ul>
+<li>Developer-friendly abstractions  </li>
+<li>Efficient event transformations  </li>
+<li>Simplified deployment models  </li>
+</ul>
+<p>This opens up interesting possibilities for teams that want stream processing without operational complexity.</p>
+<hr>
+<h2>📦 Avro for High-Performance Data Applications</h2>
+<p>Apache Avro plays a crucial role in:</p>
+<ul>
+<li>Compact binary serialization  </li>
+<li>Schema evolution support  </li>
+<li>Efficient data exchange in streaming systems  </li>
+</ul>
+<p>Avro significantly improves performance and compatibility in distributed data pipelines.</p>
+<hr>
+<h2>⏳ Linger Time in Kafka</h2>
+<p>A subtle but powerful concept discussed was <strong>linger time</strong>.</p>
+<p>In Kafka producers:</p>
+<ul>
+<li><code>linger.ms</code> determines how long to wait before sending a batch.</li>
+<li>Increasing linger time can:</li>
+<li>Improve throughput</li>
+<li>Increase batching efficiency</li>
+<li>But may:</li>
+<li>Increase latency</li>
+</ul>
+<p>This perfectly ties into the broader tradeoffs in distributed system design.</p>
+<hr>
+<h1>🤖 Gen AI Agents &amp; The Power of Agent Skills</h1>
+<p>Another fascinating talk was on <strong>Gen AI Agents</strong> and how they are reshaping automation.</p>
+<h2>🧠 What Are Agent Skills?</h2>
+<p>Agent Skills are:</p>
+<ul>
+<li>Modular capabilities an AI agent can invoke  </li>
+<li>Tool integrations (APIs, databases, search engines)  </li>
+<li>Structured execution strategies  </li>
+<li>Context-aware reasoning steps  </li>
+</ul>
+<p>Instead of simple prompt-response systems, AI agents with skills can:</p>
+<ul>
+<li>Break problems into steps  </li>
+<li>Use external tools  </li>
+<li>Validate outputs  </li>
+<li>Produce reliable and expected outcomes  </li>
+</ul>
+<p>This drastically improves:</p>
+<ul>
+<li>Efficiency  </li>
+<li>Accuracy  </li>
+<li>Task completion rates  </li>
+<li>Operational reliability  </li>
+</ul>
+<p>The future clearly lies in composable AI systems powered by well-defined agent skills.</p>
+<hr>
+<h1>📢 Publisher-Subscriber Model Deep Dive</h1>
+<p>One of the most informative sessions was about the <strong>Publisher-Subscriber (Pub-Sub) Model</strong>.</p>
+<h2>🔄 Core Components</h2>
+<ul>
+<li><strong>Publishers</strong> → Produce events  </li>
+<li><strong>Brokers</strong> → Manage message routing  </li>
+<li><strong>Subscribers</strong> → Consume events  </li>
+</ul>
+<p>This decouples producers and consumers, enabling scalability and resilience.</p>
+<hr>
+<h2>🎯 Service Goals &amp; Tradeoffs</h2>
+<p>The session also emphasized architectural tradeoffs:</p>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th>What It Optimizes</th>
+<th>Tradeoff</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Throughput</td>
+<td>Maximum data processed</td>
+<td>May increase latency</td>
+</tr>
+<tr>
+<td>Latency</td>
+<td>Fast response time</td>
+<td>May reduce batching efficiency</td>
+</tr>
+<tr>
+<td>Durability</td>
+<td>Data safety</td>
+<td>Higher storage &amp; replication cost</td>
+</tr>
+<tr>
+<td>Availability</td>
+<td>System uptime</td>
+<td>May sacrifice consistency</td>
+</tr>
+</tbody>
+</table>
+<p>This aligns closely with distributed systems theory and real-world engineering constraints.</p>
+<hr>
+<h1>💡 Final Reflections</h1>
+<p>This meetup was more than just a Kafka session — it was a masterclass in:</p>
+<ul>
+<li>Distributed systems thinking  </li>
+<li>Modern streaming architectures  </li>
+<li>Data lake evolution  </li>
+<li>Messaging systems  </li>
+<li>AI agent design  </li>
+<li>System tradeoffs and real-world decision-making  </li>
+</ul>
+<p>Events like these reinforce one important lesson:</p>
+<blockquote>
+<p>Great system design is not about choosing tools — it's about understanding tradeoffs.</p>
+</blockquote>
+<p>Looking forward to attending more such community-driven tech events 🚀</p>
+
+    </div>
+
+
+
+    <!-- Related & Popular tags -->
+    <div class="col-lg-4 pt-lg-5 pt-2">
+
+
+        <div class="popular-tags">
+          <h4>Popular Tags</h4>
+          <ul class="tagcloud" style="list-style-type:none;">
+                <li class="tag-4">
+                    <a href="https://cvarma.com/blogs/tag/kafka.html">
+                    Kafka
+                    </a>
+                </li>
+                <li class="tag-4">
+                    <a href="https://cvarma.com/blogs/tag/containers.html">
+                    Containers
+                    </a>
+                </li>
+                <li class="tag-4">
+                    <a href="https://cvarma.com/blogs/tag/docker.html">
+                    Docker
+                    </a>
+                </li>
+                <li class="tag-4">
+                    <a href="https://cvarma.com/blogs/tag/distributed-systems.html">
+                    Distributed Systems
+                    </a>
+                </li>
+                <li class="tag-1">
+                    <a href="https://cvarma.com/blogs/tag/postgres.html">
+                    Postgres
+                    </a>
+                </li>
+                <li class="tag-4">
+                    <a href="https://cvarma.com/blogs/tag/ai.html">
+                    AI
+                    </a>
+                </li>
+                <li class="tag-4">
+                    <a href="https://cvarma.com/blogs/tag/fastapi.html">
+                    FastAPI
+                    </a>
+                </li>
+                <li class="tag-4">
+                    <a href="https://cvarma.com/blogs/tag/ubuntu.html">
+                    Ubuntu
+                    </a>
+                </li>
+                <li class="tag-4">
+                    <a href="https://cvarma.com/blogs/tag/pandas.html">
+                    Pandas
+                    </a>
+                </li>
+                <li class="tag-4">
+                    <a href="https://cvarma.com/blogs/tag/iphone.html">
+                    Iphone
+                    </a>
+                </li>
+                <li class="tag-4">
+                    <a href="https://cvarma.com/blogs/tag/python.html">
+                    Python
+                    </a>
+                </li>
+          </ul>
+        </div>
+      
+    </div>
+
+  </div>
+
+</div>
+  
+   </div>
+   
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-8 col-md-8 mr-auto py-1">
+            <div class="footer-title">
+            <h4>Chaitanya Varma' Blog</h4>
+            <div class="link">
+              <a href="https://www.cvarma.com/blogs/">blog.cvarma.com</a>
+            </div>
+          </div>
+          </div>
+          <div class="col-xl-2 col-md-2">
+            <h4>Author</h4>
+              <ul class="list-unstyled my-list-style">
+                <li><a target="_blank" href="https://www.linkedin.com/in/chaitanyavarmapericherla94/">Linkedin</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <div class="col-xl-2 col-md-2">
+          <h4>Links</h4>
+          <ul class="list-unstyled my-list-style">
+            <li><a target="_blank" href="https://cvarma.com/">cvarma</a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/in/chaitanyavarmapericherla94/">Linkedin</a></li>
+            <li><a target="_blank" href="https://www.cvarma.com/profile.html">Resume</a></li>
+            <li><a target="_blank" href="https://cvarma.com/blogs/">Blogs</a></li>
+          </ul>
+        </div>
+      </div>
+
+      </div>
+    <p class=align-text-bottom>Copy rights © 2019-2025 All Rights Reserved</p>
+    </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Bootstrap Bundle JS -->	
+    <script src="https://cvarma.com/theme/js/jquery.min.js"></script>
+    <script src="https://cvarma.com/theme/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
